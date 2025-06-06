@@ -24,9 +24,9 @@ class GeneroController extends Controller
         return response()->json($this->generoService->getAllWithLivros());
     }
 
-    public function details($id)
+    public function details($id) 
     {
-        $genero = $this->generoService->getById($id);
+        $genero = $this->generoService->getById($id); // Busca o gênero pelo ID //getbyid é um método do serviço de gênero
         if (!$genero) {
             return response()->json(['message' => 'Gênero não encontrado'], 404);
         }
