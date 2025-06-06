@@ -9,7 +9,7 @@ class GeneroController extends Controller
 {
     protected $generoService;
 
-    public function __construct(GeneroService $generoService)
+    public function __construct(GeneroService $generoService) // Injeta o serviço de gênero
     {
         $this->generoService = $generoService;
     }
