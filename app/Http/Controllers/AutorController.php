@@ -28,7 +28,7 @@ class AutorController extends Controller
         return response()->json($autor);
     }
 
-    public function store(Request $request)
+    public function store(Request $request) // Cria um novo autor
     {
         $autor = $this->autorService->create($request->all());
         return response()->json($autor, 201);
@@ -45,7 +45,9 @@ class AutorController extends Controller
 
     public function delete($id)
     {
-        $autor = $this->autorService->delete($id);
+        $autor = $this->autorService->delete($id); // Deleta o autor pelo ID
+         // Se o autor não for encontrado, retorna null
+         // Se o autor for encontrado, deleta e retorna uma mensagem de sucesso
         if (!$autor) {
             return response()->json(['message' => 'Autor não encontrado'], 404);
         }

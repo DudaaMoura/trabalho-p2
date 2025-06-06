@@ -13,7 +13,7 @@ class GeneroService
         $this->generoRepository = $generoRepository;
     }
 
-    public function getAll()
+    public function getAll() 
     {
         return $this->generoRepository->all();
     }

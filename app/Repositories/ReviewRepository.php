@@ -23,14 +23,15 @@ class ReviewRepository
 
     public function update($id, array $data)
     {
-        $review = Review::find($id);
+        $review = Review::find($id); // Procura o review pelo ID
+        // Se o review não for encontrado, retorna null
         if ($review) {
             $review->update($data);
         }
         return $review;
     }
 
-    public function delete($id)
+    public function delete($id) // Deleta o review pelo ID
     {
         $review = Review::find($id);
         if ($review) {

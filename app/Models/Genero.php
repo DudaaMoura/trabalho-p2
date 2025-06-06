@@ -9,7 +9,7 @@ class Genero extends Model
     protected $table = 'generos'; // referência à tabela no banco de dados
     protected $fillable = ['nome']; // campos que podem ser preenchidos em massa
 
-    public function livros()
+    public function livros() // Define o relacionamento com o modelo Livro
     {
         return $this->hasMany( // um gênero tem muitos livros
             Livro::class,
